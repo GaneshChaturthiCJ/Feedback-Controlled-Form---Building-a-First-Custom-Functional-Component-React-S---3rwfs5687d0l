@@ -4,11 +4,12 @@ import '../styles/App.css';
 const App = () => {
   const [rating, setRating] = useState(5);
   const [comment, setComment] = useState(true);
-  const [commentError, setCommentError] = useState();
+  const [rangeVal, setRangeVal] = useState(5);
   
   
   const ratingUpdate = (event) =>{
       setRating(event.target.value);
+      setRangeVal(event.target.value)
   }
   const validation = (event) =>{
     if(event.target.value.length < 5 ){
@@ -31,6 +32,7 @@ const App = () => {
             type="range"
             min="1"
             max="10"
+            value={rangeVal}
             id="rating" 
             onChange={ratingUpdate}
           />
